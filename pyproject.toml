@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "microtraining"
-version = "0.0.1"
+version = "1.0.0"
 description = "Hans provides solutions. Always."
 readme = "README.md"
 authors = [{ name = "Alexander Nasuta", email = "alexander.nasuta@ima.rwth-aachen.de" }]
@@ -16,20 +16,41 @@ classifiers = [
 ]
 keywords = ["micro", "training", "big", "brain", "1337"]
 dependencies = [
-    "requests >= 2",
+    # add your package dependencies here
+    # use only major version specifiers and use pip-compile to pin them
+    "requests >= 2,<3", # this is just an example, you can add your own dependencies here
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 
 
 
 [project.optional-dependencies]
 dev = [
-    "black", "bumpver", "isort", "pip-tools", "pytest", "pytest-cov", "mypy",
-    "flake8"
+    "pip-tools", # for pip-compile
+    "pytest", # for testing with pytest
+    "pytest-cov", # for coverage-reporting
+    "mypy", # for type-checking
+    "flake8", # for linting
+    "tox", # for testing in clean newly setup environments
+    "twine", # for uploading to pypi
+    # add more if needed
+    # documentation
+    "sphinx",
+    "myst-parser", # .md support for sphinx
+    "sphinx-autobuild",
+    # "nbsphinx", # for jupyter notebook support in sphinx
+    #
+    "furo", # cool theme
+    "twine",
+    "sphinx-copybutton", # for code copy buttons
+    # "nbsphinx", # for jupyter notebook support in sphinx
+    "pandoc", # for converting markdown to rst
+    # for converting examples to notebooks
+    "typing_extensions>=4.12.0",
 ]
 
 [tool.pytest.ini_options]
-addopts = "--cov=micropackage -p no:warnings"
+addopts = "--cov=micropackage -p no:warnings" # you probably want to change this to your package name
 testpaths = [
     "tests",
 ]
@@ -48,37 +69,5 @@ warn_unreachable = true
 warn_unused_configs = true
 no_implicit_reexport = true
 
-# auto generated with bumpver inint
-#
-# [tool.bumpver]
-# current_version = "2022.1001-alpha"
-# version_pattern = "YYYY.BUILD[-TAG]"
-# commit_message = "bump version {old_version} -> {new_version}"
-# commit = true
-# tag = true
-# push = true
-
-[tool.bumpver]
-current_version = "0.0.1"
-version_pattern = "MAJOR.MINOR.PATCH"
-commit_message  = "Bump version {old_version} -> {new_version}"
-commit          = true
-tag             = true
-push            = false
-
-
-[tool.bumpver.file_patterns]
-"pyproject.toml" = [
-    'current_version = "{version}"',
-]
-"setup.py" = [
-    "{version}",
-    "{pep440_version}",
-]
-"README.md" = [
-    "{version}",
-    "{pep440_version}",
-]
-
 [project.urls]
-Homepage = "https://github.com/Alexander-Nasuta/pypitemplate"
+Homepage = "https://github.com/Alexander-Nasuta/microtraining"
