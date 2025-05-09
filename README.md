@@ -1,9 +1,9 @@
 # Micropackage
 
-- [microtraining on **Gitlab**](https://git-ce.rwth-aachen.de/alexander.nasuta/jsp-instance-utils)
-- [microtraining on **Github**](https://github.com/Alexander-Nasuta/jsp-instance-utils/)
+- [microtraining on **Gitlab**](https://git-ce.rwth-aachen.de/alexander.nasuta/)
+- [microtraining on **Github**](https://github.com/Alexander-Nasuta/)
 - [microtraining **PyPi**](https://pypi.org/project/microtraining/)
-- [microtraining **Documentation**](https://jsp-instance-utils.readthedocs.io/en/latest/)
+- [microtraining **Documentation**](https://about.readthedocs.com/)
 
 # About The Project
 A minimal example project for publishing Python Software Packages in 2025.
